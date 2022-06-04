@@ -24,8 +24,8 @@ This was super fun for me to figure out and I learned how to use the bitwise ope
 ```rs
 // src/main.rs, line 134
 encrypted.push(
-    (main_pixel[i] & 0b_1100_0000) +        // Replace last 6 bits of main pixel
-    ((hidden_pixel[i] & 0b_1111_1100) >> 2) // with first 6 bits of hidden pixel
+    (main_pixel[i] & 0b_1111_1000) +        // Replace last 3 bits of main pixel
+    ((hidden_pixel[i] & 0b_1110_0000) >> 5) // with first 3 bits of hidden pixel
 );
 ```
 

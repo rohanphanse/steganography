@@ -127,7 +127,7 @@ fn encrypt_bits(main_vec: &Vec<u8>, main_start: usize, hidden_vec: &Vec<u8>, hid
     let hidden_pixel = get_rgba(hidden_vec, hidden_start);
     let mut encrypted: Vec<u8> = Vec::with_capacity(4);
     for i in 0..3 {
-        // Replace last 6 bits of main pixel with first 6 bits of hidden pixel
+        // Replace last 3 bits of main pixel with first 3 bits of hidden pixel
         encrypted.push((main_pixel[i] & 0b_1111_1000) + ((hidden_pixel[i] & 0b_1110_0000) >> 5));
     }
     let hidden_alpha_channel = if hidden_pixel[3] > 127 { 1 } else { 0 };
@@ -139,7 +139,7 @@ fn lose_bits(main_vec: &Vec<u8>, main_start: usize) -> Vec<u8> {
     let main_pixel = get_rgba(main_vec, main_start);
     let mut encrypted: Vec<u8> = Vec::with_capacity(4);
     for i in 0..3 {
-        // Replace last 6 bits of main pixel with zeros
+        // Replace last 3 bits of main pixel with zeros
         encrypted.push((main_pixel[i] & 0b_1111_1000) + ((0 & 0b_1110_0000) >> 5));
     }
     encrypted.push(main_pixel[3]);
@@ -164,7 +164,7 @@ fn decrypt_bits(vec: &Vec<u8>, start: usize) -> Vec<u8> {
     let mut decrypted: Vec<u8> = Vec::with_capacity(4);
     // RGB
     for i in 0..3 {
-        // Move 6 last bits to start
+        // Move 3 last bits to start
         decrypted.push((pixel[i] & 0b_0000_0111) << 5);
     }
     // Alpha channel (determines transparency)
