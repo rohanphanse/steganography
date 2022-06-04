@@ -14,10 +14,12 @@ pub fn get_input(prompt: &str, color: &str) -> String {
     // Read input string 
     let mut input = String::new();
     print!("{}", prompt);
-    println!("{} ", color_code); // Color input text
+    // Color input text
+    println!("{} ", color_code);
     stdin().read_line(&mut input)
         .expect("Failed to read input :(");
-    print!("\u{001b}[0m"); // Reset colors
+    // Reset colors
+    print!("\u{001b}[0m"); 
     // Only look at first line (remove "\n")
     match input.lines().next() {
         Some(value) => input = value.to_string(),
