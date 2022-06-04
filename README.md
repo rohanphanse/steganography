@@ -22,7 +22,7 @@ I want to feature 2 pieces of code, because they were the most rewarding and cha
 This was super fun for me to figure out and I learned how to use the bitwise operators `AND &`, `OR |`, and `<< BITSHIFT >>`.
 
 ```rs
-// src/main.rs, line 130
+// src/main.rs, line 129
 encrypted.push(
     (main_pixel[i] & 0b_1100_0000) +        // Replace last 6 bits of main pixel
     ((hidden_pixel[i] & 0b_1111_1100) >> 2) // with first 6 bits of hidden pixel
@@ -34,6 +34,7 @@ encrypted.push(
 Images are stored in buffers (1d arrays), so I had to figure out how to traverse the buffer while keeping track of the 2d location of the pixels. After a lot of mindless debugging, I realized that `image_height * image_width * 4 == buffer_length` and having reached enlightenment, I blissfully wrote the code below in a state of nirvana.
 
 ```rs
+// src/main.rs, lines 95-104
 for h in 0..main_height {
     for w in 0..main_width {
         i = (h * main_width + w) * 4;
