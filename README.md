@@ -61,7 +61,7 @@ Main | Hidden
 ---- | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "penguin - hidden image" width = "500px" />
 
-Encrypted | Decrypted
+Encrypted (Penguin Hidden in Mario) | Decrypted (Penguin Revealed 🥳)
 ----  | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-enc.png" alt = "mario penguin - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-dec.png" alt = "mario penguin - decrypted image" width = "500px" />
 
@@ -69,6 +69,6 @@ Main | Hidden
 ---- | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "penguin - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario - hidden image" width = "500px" />
 
-Encrypted | Decrypted
+Encrypted (Mario Hidden in Penguin) | Decrypted (Mario Revealed 🎉)
 ----  | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-enc.png" alt = "penguin mario - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-dec.png" alt = "penguin mario - decrypted image" width = "500px" />
