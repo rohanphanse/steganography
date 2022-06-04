@@ -22,7 +22,7 @@ I want to feature 2 pieces of code, because they were the most rewarding and cha
 This was super fun for me to figure out and I learned how to use the bitwise operators `AND &`, `OR |`, and `<< BITSHIFT >>`.
 
 ```rs
-// src/main.rs, line 129
+// src/main.rs, line 134
 encrypted.push(
     (main_pixel[i] & 0b_1100_0000) +        // Replace last 6 bits of main pixel
     ((hidden_pixel[i] & 0b_1111_1100) >> 2) // with first 6 bits of hidden pixel
@@ -34,9 +34,10 @@ encrypted.push(
 Images are stored in buffers (1d arrays), so I had to figure out how to traverse the buffer while keeping track of the 2d location of the pixels. After a lot of mindless debugging, I realized that `image_height * image_width * 4 == buffer_length` and having reached enlightenment, I blissfully wrote the code below in a state of nirvana.
 
 ```rs
-// src/main.rs, lines 95-104
+// src/main.rs, lines 97-107
 for h in 0..main_height {
     for w in 0..main_width {
+        // Convert 2d pixel location (w, h) to 1d index in image buffer
         i = (h * main_width + w) * 4;
         if h < hidden_height && w < hidden_width  {
             encrypted.splice(i..=i + 3, encrypt_bits(&main_vec, i, &hidden_vec, (h * hidden_width + w) * 4));
@@ -47,6 +48,10 @@ for h in 0..main_height {
 }
 ```
 
+## Testing
+
+My steganographer passes my tests with flying colors on `.png` files and fails on `.jpg` (I suspect that jpeg does some compression which conflicts with my bit manipulations).
+
 
 ## Examples
 
@@ -54,21 +59,18 @@ Here are 2 examples of my steganography encrypter / decrypter.
 
 Main | Hidden
 ---- | ----
-![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/paysage.jpg) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mona-lisa.jpg)
+![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png)
 
-*Credit to Wikipedia for [Landscape](https://commons.wikimedia.org/wiki/File:Camille_Pissarro_-_Paisaje_tropical.jpg) and [Mona Lisa](https://en.wikipedia.org/wiki/File:Mona_Lisa.jpg) images*
+*Credit to pngimg.com for Mario and e*
 
 Encrypted | Decrypted
 ----  | ----
-![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/aaa.jpg) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/ddd.jpg)
+![encrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-enc.png) | ![decrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-dec.png)
 
 Main | Hidden
 ---- | ----
-![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mona-lisa.jpg) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/bday.jpg)
-
-*Credit to [Ruth Black](https://www.dreamstime.com/happy-birthday-cupcake-celebration-message-image160558421) for Birthday image*
-
+![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png)
 
 Encrypted | Decrypted
 ----  | ----
-![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/bday-enc.jpg) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/bday-dec.jpg)
+![encrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-enc.png) | ![decrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-dec.png)
