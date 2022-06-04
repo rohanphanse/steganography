@@ -44,6 +44,7 @@ fn main() -> Result<(), ImageDataErrors> {
     if main_image_format != hidden_image_format {
         return Err(ImageDataErrors::DifferentImageFormats)
     } 
+    println!("Scaling...");
     // Scale main image to fit inside max size (957 x 957)
     let main_image = fit_inside((957, 957), &main_image);
     // Scale hidden image to fit inside main image
@@ -90,9 +91,6 @@ fn encrypt(main_image: DynamicImage, hidden_image: DynamicImage) -> Vec<u8> {
     let hidden_width = hidden_image.width() as usize;
     let hidden_height = hidden_image.height() as usize;
 
-    println!("Main Image ({} by {})", main_width, main_height);
-    println!("Hidden Image ({} by {})", hidden_width, hidden_height);
-    
     let mut i;
     for h in 0..main_height {
         for w in 0..main_width {
@@ -142,7 +140,8 @@ fn lose_bits(main_vec: &Vec<u8>, main_start: usize) -> Vec<u8> {
         // Replace last 3 bits of main pixel with zeros
         encrypted.push((main_pixel[i] & 0b_1111_1000) + ((0 & 0b_1110_0000) >> 5));
     }
-    encrypted.push(main_pixel[3]);
+    // Set revealed bit as transparent (0 at end)
+    encrypted.push(main_pixel[3] & 0b_1111_1110);
     return encrypted;
 }
 
