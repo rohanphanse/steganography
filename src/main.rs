@@ -96,9 +96,9 @@ fn encrypt(main_image: DynamicImage, hidden_image: DynamicImage) -> Vec<u8> {
         for w in 0..main_width {
             i = (h * main_width + w) * 4;
             if h < hidden_height && w < hidden_width  {
-                encrypted.splice(i..=i + 3, swap_bits(&main_vec, i, &hidden_vec, (h * hidden_width + w) * 4));
+                encrypted.splice(i..=i + 3, encrypt_bits(&main_vec, i, &hidden_vec, (h * hidden_width + w) * 4));
             } else {
-                encrypted.splice(i..=i + 3, remove_bits(&main_vec, i));
+                encrypted.splice(i..=i + 3, lose_bits(&main_vec, i));
             }
         }
     }
@@ -120,20 +120,19 @@ fn get_rgba(vec: &Vec<u8>, start: usize) -> Vec<u8> {
     rgba
 }
 
-// Swap first 2 bits of hidden pixel with last 2 bits of main pixel
-fn swap_bits(main_vec: &Vec<u8>, main_start: usize, hidden_vec: &Vec<u8>, hidden_start: usize) -> Vec<u8> {
+fn encrypt_bits(main_vec: &Vec<u8>, main_start: usize, hidden_vec: &Vec<u8>, hidden_start: usize) -> Vec<u8> {
     let main_pixel = get_rgba(main_vec, main_start);
     let hidden_pixel = get_rgba(hidden_vec, hidden_start);
     let mut encrypted: Vec<u8> = Vec::with_capacity(4);
     for i in 0..3 {
-        // Replace last 3 bits of main pixel with first 3 bits of hidden pixel
+        // Replace last 6 bits of main pixel with first 6 bits of hidden pixel
         encrypted.push((main_pixel[i] & 0b_1100_0000) + ((hidden_pixel[i] & 0b_1111_1100) >> 2));
     }
     encrypted.push(main_pixel[3]);
     encrypted
 }
 
-fn remove_bits(main_vec: &Vec<u8>, main_start: usize) -> Vec<u8> {
+fn lose_bits(main_vec: &Vec<u8>, main_start: usize) -> Vec<u8> {
     let main_pixel = get_rgba(main_vec, main_start);
     let mut encrypted: Vec<u8> = Vec::with_capacity(4);
     for i in 0..3 {
