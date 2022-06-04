@@ -59,7 +59,7 @@ Here are 2 examples of my steganography encrypter / decrypter.
 
 Main | Hidden
 ---- | ----
-![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png)
+<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "penguin - hidden image" width = "500px" />
 
 *Credit to pngimg.com for Mario and e*
 
