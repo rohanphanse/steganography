@@ -1,6 +1,6 @@
 # Steganography
 
-Steganography is a form of cryptography where a hidden message is concealed inside another message. For images, this process works by encrypting the most significant bits of a hidden image into the least significant bits of a main image, and then displaying the hidden image bits to reveal the image. The beauty of the steganography is that although the hidden bits fly under the human vision radar (in theory, my encrypter is too generous and wants both images to shine 🙂), the information is readily available for the computer to decrypt it.
+Steganography is a form of cryptography where a hidden message is concealed inside another message. For images, this process works by encrypting the most significant bits of a hidden image into the least significant bits of a main image, and then displaying the hidden image bits to reveal the image. The beauty of the steganography is that the hidden bits fly under the human vision radar, yet the information is readily available for the computer to decrypt it.
 
 ## Features
 * Encrypt a hidden image into another image
