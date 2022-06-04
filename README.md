@@ -55,22 +55,20 @@ My steganographer passes my tests with flying colors on `.png` files and fails o
 
 ## Examples
 
-Here are 2 examples of my steganography encrypter / decrypter.
+*Credit to pngimg.com for [Mario](https://pngimg.com/image/30596) and Stack Overflow post for [Linux Penguin](https://stackoverflow.com/questions/24450999/add-border-around-png-image-using-imagick-php).*
 
 Main | Hidden
 ---- | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "penguin - hidden image" width = "500px" />
 
-*Credit to pngimg.com for Mario and e*
-
 Encrypted | Decrypted
 ----  | ----
-![encrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-enc.png) | ![decrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-dec.png)
+<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario penguin - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "mario penguin - decrypted image" width = "500px" />
 
 Main | Hidden
 ---- | ----
-![main image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png) | ![hidden image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png)
+<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "penguin - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "mario - hidden image" width = "500px" />
 
 Encrypted | Decrypted
 ----  | ----
-![encrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-enc.png) | ![decrypted image](https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-dec.png)
+<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "penguin mario - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "penguin mario - decrypted image" width = "500px" />
