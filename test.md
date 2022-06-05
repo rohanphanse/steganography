@@ -1,3 +1,9 @@
+Rust CLI
+```
+cargo build --release
+./target/release/steganography
+```
+
 ```rs
 Enter path of output image:  
 output-2.jpg

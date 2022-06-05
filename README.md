@@ -67,8 +67,8 @@ Encrypted (Penguin Hidden in Mario) | Decrypted (Penguin Revealed 🥳)
 
 Main | Hidden
 ---- | ----
-<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "penguin - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario - hidden image" width = "500px" />
+<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/paysage.png" alt = "paysage - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mona-lisa.png" alt = "mona lisa - hidden image" width = "500px" />
 
 Encrypted (Mario Hidden in Penguin) | Decrypted (Mario Revealed 🎉)
 ----  | ----
-<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-enc.png" alt = "penguin mario - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/peng-mar-dec.png" alt = "penguin mario - decrypted image" width = "500px" />
+<img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/pay-mona-enc.png" alt = "paysage mona - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/pay-mona-dec.png" alt = "paysage mona - decrypted image" width = "500px" />
