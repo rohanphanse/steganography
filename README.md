@@ -57,7 +57,7 @@ My steganographer passes my tests with flying colors on `.png` files and fails o
 
 *Credit to pngimg.com for [Mario](https://pngimg.com/image/30596) and Stack Overflow post for [Linux Penguin](https://stackoverflow.com/questions/24450999/add-border-around-png-image-using-imagick-php).*
 
-Main | Hidden
+Main - Mario | Hidden - Penguin
 ---- | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/penguin.png" alt = "penguin - hidden image" width = "500px" />
 
@@ -65,10 +65,12 @@ Encrypted (Penguin Hidden in Mario) | Decrypted (Penguin Revealed 🥳)
 ----  | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-enc.png" alt = "mario penguin - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-dec.png" alt = "mario penguin - decrypted image" width = "500px" />
 
-Main | Hidden
+*Credit to Wikipedia for [Paysage by Camille Pissarro](https://commons.wikimedia.org/wiki/File:Camille_Pissarro_-_Paisaje_tropical.jpg) and [Mona Lisa](https://en.wikipedia.org/wiki/File:Mona_Lisa.jpg)*
+
+Main - Paysage | Hidden - Mona Lisa
 ---- | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/paysage.png" alt = "paysage - main image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mona-lisa.png" alt = "mona lisa - hidden image" width = "500px" />
 
-Encrypted (Mario Hidden in Penguin) | Decrypted (Mario Revealed 🎉)
+Encrypted (Mona Lisa Hidden in Paysage) | Decrypted (Mona Lisa Revealed 🎉)
 ----  | ----
 <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/pay-mona-enc.png" alt = "paysage mona - encrypted image" width = "500px" /> | <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/pay-mona-dec.png" alt = "paysage mona - decrypted image" width = "500px" />
