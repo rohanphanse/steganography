@@ -99,7 +99,7 @@ fn encrypt(main_image: DynamicImage, hidden_image: DynamicImage) -> Vec<u8> {
             if h < hidden_height && w < hidden_width  {
                 encrypted.splice(i..=i + 3, encrypt_bits(&main_vec, i, &hidden_vec, (h * hidden_width + w) * 4));
             } else {
-                encrypted.splice(i..=i + 3, lose_bits(&main_vec, i));
+                encrypted.splice(i..=i + 3, encode_transparent_pixel(&main_vec, i));
             }
         }
     }
@@ -133,7 +133,7 @@ fn encrypt_bits(main_vec: &Vec<u8>, main_start: usize, hidden_vec: &Vec<u8>, hid
     return encrypted;
 }
 
-fn lose_bits(main_vec: &Vec<u8>, main_start: usize) -> Vec<u8> {
+fn encode_transparent_pixel(main_vec: &Vec<u8>, main_start: usize) -> Vec<u8> {
     let main_pixel = get_rgba(main_vec, main_start);
     let mut encrypted: Vec<u8> = Vec::with_capacity(4);
     for i in 0..3 {

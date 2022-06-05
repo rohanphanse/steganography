@@ -42,7 +42,7 @@ for h in 0..main_height {
         if h < hidden_height && w < hidden_width  {
             encrypted.splice(i..=i + 3, encrypt_bits(&main_vec, i, &hidden_vec, (h * hidden_width + w) * 4));
         } else {
-            encrypted.splice(i..=i + 3, lose_bits(&main_vec, i));
+            encrypted.splice(i..=i + 3, encode_transparent_pixel(&main_vec, i));
         }
     }
 }
